@@ -1,0 +1,31 @@
+$baseWidth: 600px;
+$mainWidth: round($baseWidth / 1.618);
+$sidebarWidth: round ($baseWidth * 0.382);
+
+
+$black: rgb(0,0,0);
+$white: rgb(255, 255, 255);
+$light-gray: rgb(204, 204, 204);
+$dark-moderate-blue: rgb(62, 122, 144);
+$very-soft-orange: rgb(232, 210, 150);
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+body {
+  max-width: $baseWidth;
+  padding: 0.3125rem;
+  border: 0.0625rem solid black;
+  margin: 5% auto;
+  border-radius: 0.25rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba($black, .5);
+  font-family: 'Kite One', sans-serif;
+}
